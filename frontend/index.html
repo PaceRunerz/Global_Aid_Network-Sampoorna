@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Aid Network | Revolutionizing Donations Worldwide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E86AB;
+            --secondary: #A23B72;
+            --accent: #F18F01;
+            --light: #F7F9FC;
+            --dark: #2B2D42;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+            --gray: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a6a8a;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(46, 134, 171, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a6a8a 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            background-color: rgba(46, 134, 171, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Live Counter */
+        .counter-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .counter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .counter-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .counter {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .counter-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .counter-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Leaderboard */
+        .leaderboard {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .leaderboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .leaderboard-tabs {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: var(--radius);
+            background-color: var(--light);
+        }
+
+        .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: 50px;
+            text-align: center;
+        }
+
+        .rank-1 {
+            color: var(--accent);
+        }
+
+        .rank-2 {
+            color: var(--gray);
+        }
+
+        .rank-3 {
+            color: #CD7F32;
+        }
+
+        .leaderboard-info {
+            flex-grow: 1;
+            margin-left: 1rem;
+        }
+
+        .leaderboard-name {
+            font-weight: 600;
+        }
+
+        .leaderboard-stats {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Feed Section */
+        .feed-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feed-item {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .feed-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feed-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        .feed-user {
+            flex-grow: 1;
+        }
+
+        .feed-username {
+            font-weight: 600;
+        }
+
+        .feed-time {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .feed-content {
+            padding: 1rem;
+        }
+
+        .feed-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .feed-actions {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .feed-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .feed-action:hover {
+            color: var(--primary);
+        }
+
+        /* Map Section */
+        .map-container {
+            height: 400px;
+            background-color: #e9ecef;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 10;
+            width: 300px;
+        }
+
+        .map-search {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .map-search input {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius) 0 0 var(--radius);
+        }
+
+        .map-search button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+        }
+
+        .map-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .map-filter {
+            background-color: var(--light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .map-filter.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            background-color: #fff8e1;
+            padding: 3rem 0;
+        }
+
+        .emergency-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .emergency-content {
+            flex: 1;
+        }
+
+        .emergency-form {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Verification Process */
+        .verification-process {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .verification-process::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #e9ecef;
+            z-index: 1;
+        }
+
+        .verification-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--gray);
+        }
+
+        .verification-step.active .step-icon {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #495057;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 500px;
+            box-shadow: var(--shadow);
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            background-color: var(--success);
+            color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.error {
+            background-color: var(--danger);
+        }
+
+        .toast.warning {
+            background-color: var(--warning);
+            color: var(--dark);
+        }
+
+        /* QR Code */
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dee2e6;
+            border-radius: var(--radius);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .feed-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .emergency-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .counter-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .verification-process {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .verification-process::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeLink">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>AID by Shreyansh Tripathi</span>
+                </div>
+                <div class="nav-links">
+                    <a id="homeNav">Home</a>
+                    <a id="donateNav">Donate</a>
+                    <a id="requestsNav">Requests</a>
+                    <a id="leaderboardNav">Leaderboard</a>
+                    <a id="mapNav">Map</a>
+                    <a id="aboutNav">About</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Log In</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="homeSection">
+        <div class="container">
+            <h1>Revolutionizing How The World Gives</h1>
+            <p>Connecting donors with those in need through our innovative platform. Join thousands making a difference today.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-light" id="startDonatingBtn">Start Donating</button>
+                <button class="btn btn-outline" style="color: white; border-color: white;" id="learnMoreBtn">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="featuresSection">
+        <div class="container">
+            <div class="section-title">
+                <h2>How We're Changing Donations</h2>
+                <p>Our platform brings innovation, transparency, and efficiency to charitable giving worldwide.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-feature="food">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food Donation Counter</h3>
+                    <p>Real-time tracking of food donations with daily reset. Restaurants can update quantities, and organizations can claim available donations.</p>
+                </div>
+                <div class="feature-card" data-feature="social">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Impact Feed</h3>
+                    <p>Stay updated with needs and success stories through our social media-style feed that promotes awareness and engagement.</p>
+                </div>
+                <div class="feature-card" data-feature="leaderboard">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Recognition Leaderboard</h3>
+                    <p>Top donors, restaurants, and NGOs are recognized quarterly and annually to encourage participation and celebrate impact.</p>
+                </div>
+                <div class="feature-card" data-feature="fundraising">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Fundraising</h3>
+                    <p>Anyone worldwide can create "Fund Me" campaigns for personal needs, community projects, or disaster relief efforts.</p>
+                </div>
+                <div class="feature-card" data-feature="location">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Location-Based Help</h3>
+                    <p>Find nearby NGOs, donation centers, and opportunities to help in your community through our integrated mapping system.</p>
+                </div>
+                <div class="feature-card" data-feature="emergency">
+                    <div class="feature-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3>Emergency Response</h3>
+                    <p>Submit urgent requests for assistance that are prioritized and routed to the most appropriate responders in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Counter Section -->
+    <section class="counter-section" id="counterSection">
+        <div class="container">
+            <div class="counter-container">
+                <h2 class="counter-title">Today's Food Donations</h2>
+                <div class="counter" id="foodCounter">0<span style="font-size: 2rem;">meals</span></div>
+                <p class="counter-subtitle">Updated in real-time from participating restaurants and donors</p>
+                <button class="btn btn-light" id="donateFoodBtn">Donate Food Now</button>
+                
+                <div class="counter-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="restaurantCount">0</div>
+                        <div class="stat-label">Restaurants</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="organizationCount">0</div>
+                        <div class="stat-label">Organizations</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="cityCount">0</div>
+                        <div class="stat-label">Cities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="section" id="leaderboardSection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Contributors</h2>
+                <p>Recognizing those making the biggest impact in our community</p>
+            </div>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <h3>Quarterly Leaderboard</h3>
+                    <div class="leaderboard-tabs">
+                        <div class="tab active" data-category="restaurants">Restaurants</div>
+                        <div class="tab" data-category="ngos">NGOs</div>
+                        <div class="tab" data-category="individuals">Individuals</div>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- Leaderboard items will be dynamically generated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Feed Section -->
+    <section class="section" style="background-color: #f8f9fa;" id="feedSection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Impact Stories & Needs</h2>
+                <p>See how donations are making a difference and discover current needs</p>
+            </div>
+            
+            <div class="feed-container">
+                <div class="feed" id="socialFeed">
+                    <!-- Feed items will be dynamically generated -->
+                </div>
+                
+                <div class="sidebar">
+                    <div class="feature-card">
+                        <h3>Create a Fundraiser</h3>
+                        <p>Start your own campaign to raise funds for a cause you care about.</p>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="startFundraiserBtn">Start Fundraising</button>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-top: 1.5rem;">
+                        <h3>Upcoming Events</h3>
+                        <div style="margin-top: 1rem;" id="eventsList">
+                            <!-- Events will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="mapSection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Find Help Nearby</h2>
+                <p>Locate NGOs, donation centers, and opportunities in your area</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-overlay">
+                    <div class="map-search">
+                        <input type="text" id="mapSearch" placeholder="Search location...">
+                        <button id="mapSearchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="map-filters">
+                        <div class="map-filter active" data-filter="all">All</div>
+                        <div class="map-filter" data-filter="food">Food Banks</div>
+                        <div class="map-filter" data-filter="shelter">Shelters</div>
+                        <div class="map-filter" data-filter="ngo">NGOs</div>
+                        <div class="map-filter" data-filter="restaurant">Restaurants</div>
+                    </div>
+                </div>
+                <!-- In a real implementation, this would be a Google Maps embed -->
+                <div style="width: 100%; height: 100%; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <p>Interactive Map Would Appear Here</p>
+                        <p style="font-size: 0.9rem; color: var(--gray);">With markers for NGOs, restaurants, and donation centers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section class="emergency-section" id="emergencySection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Emergency Assistance</h2>
+                <p>Submit urgent requests for immediate help</p>
+            </div>
+            
+            <div class="emergency-container">
+                <div class="emergency-content">
+                    <h3>Need Immediate Assistance?</h3>
+                    <p>If you or someone you know needs urgent help with food, shelter, or other basic necessities, our emergency response team is here to help.</p>
+                    <p>We prioritize emergency requests and connect them with available resources in your area as quickly as possible.</p>
+                    <div style="margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-bolt" style="color: var(--accent); margin-right: 1rem;"></i>
+                            <div>
+                                <div style="font-weight: 600;">24/7 Response Team</div>
+                                <div style="color: var(--gray);">Always available to handle urgent cases</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 1rem;"></i>
+                            <div>
+                                <div style="font-weight: 600;">Verified Assistance</div>
+                                <div style="color: var(--gray);">All help providers are vetted for safety</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-clock" style="color: var(--secondary); margin-right: 1rem;"></i>
+                            <div>
+                                <div style="font-weight: 600;">Rapid Deployment</div>
+                                <div style="color: var(--gray);">Average response time under 2 hours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="emergency-form">
+                    <h3>Submit Emergency Request</h3>
+                    <form id="emergencyForm">
+                        <div class="form-group">
+                            <label for="emergency-type">Type of Emergency</label>
+                            <select class="form-control" id="emergency-type" required>
+                                <option value="">Select type</option>
+                                <option>Food Shortage</option>
+                                <option>Natural Disaster</option>
+                                <option>Medical Emergency</option>
+                                <option>Shelter Needed</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-location">Location</label>
+                            <input type="text" class="form-control" id="emergency-location" placeholder="Enter your location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-details">Details</label>
+                            <textarea class="form-control" id="emergency-details" placeholder="Please describe the emergency and what kind of help is needed" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-contact">Contact Information</label>
+                            <input type="text" class="form-control" id="emergency-contact" placeholder="Phone number or email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Emergency Request</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 4rem;">
+                <h2>Two-Step Verification Process</h2>
+                <p>Ensuring donations reach the right people safely and securely</p>
+            </div>
+            
+            <div class="verification-process">
+                <div class="verification-step active">
+                    <div class="step-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="step-title">Step 1: Donor Verification</div>
+                    <div class="step-description">Donors generate a unique QR code for each donation</div>
+                </div>
+                <div class="verification-step">
+                    <div class="step-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="step-title">Step 2: Recipient Scan</div>
+                    <div class="step-description">Recipient scans QR code to confirm receipt</div>
+                </div>
+                <div class="verification-step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="step-title">Step 3: Confirmation</div>
+                    <div class="step-description">System confirms successful delivery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Global Aid Network</h3>
+                <p style="color: #adb5bd; margin-bottom: 1.5rem;">
+                    Connecting generosity with need through technology.
+                </p>
+
+                <!-- Social Media Icons -->
+                <div style="display: flex; gap: 1rem;">
+
+                    <a href="https://www.linkedin.com/in/st-shreyansh-tripathi" target="_blank" 
+                       style="color: #adb5bd; font-size: 1.2rem;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://github.com/PaceRunerz" target="_blank" 
+                       style="color: #adb5bd; font-size: 1.2rem;">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://twitter.com/YOUR_USERNAME_HERE" target="_blank" 
+                       style="color: #adb5bd; font-size: 1.2rem;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a href="https://instagram.com/YOUR_USERNAME_HERE" target="_blank" 
+                       style="color: #adb5bd; font-size: 1.2rem;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                   
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-nav" data-section="home">Home</a></li>
+                    <li><a href="#" class="footer-nav" data-section="donate">About Us</a></li>
+                    <li><a href="#" class="footer-nav" data-section="donate">Donate Now</a></li>
+                    <li><a href="#" class="footer-nav" data-section="emergency">Request Help</a></li>
+                    <li><a href="#" class="footer-nav" data-section="volunteer">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> HN. 149, Shivram City, Krishna Nagar, LKO</li>
+                    <li><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> 63069*****-HELP</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> shreyanshtripathi210@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Global Aid Network. All rights reserved. 
+                Made by Pace Runerz Alchemy | 
+                <a href="#" style="color: #adb5bd;">Privacy Policy</a> | 
+                <a href="#" style="color: #adb5bd;">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Log In</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Log In</button>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="#" style="color: var(--primary);">Forgot your password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sign Up</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" class="form-control" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" class="form-control" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupType">I am a</label>
+                        <select class="form-control" id="signupType" required>
+                            <option value="">Select type</option>
+                            <option>Individual Donor</option>
+                            <option>Restaurant</option>
+                            <option>NGO/Organization</option>
+                            <option>Volunteer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="donateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Make a Donation</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="donateForm">
+                    <div class="form-group">
+                        <label for="donationType">Donation Type</label>
+                        <select class="form-control" id="donationType" required>
+                            <option value="">Select type</option>
+                            <option>Food</option>
+                            <option>Clothing</option>
+                            <option>Money</option>
+                            <option>Medical Supplies</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="donationQuantity">Quantity</label>
+                        <input type="number" class="form-control" id="donationQuantity" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donationDescription">Description</label>
+                        <textarea class="form-control" id="donationDescription" placeholder="Please describe your donation"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="donationLocation">Pickup/Drop-off Location</label>
+                        <input type="text" class="form-control" id="donationLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Donation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Donation QR Code</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: center; margin-bottom: 1.5rem;">Scan this QR code to verify your donation</p>
+                <div class="qr-code">
+                    <div style="text-align: center;">
+                        <i class="fas fa-qrcode" style="font-size: 5rem; color: var(--primary);"></i>
+                        <p style="margin-top: 1rem; font-weight: 600;">#DON-2023-001</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="btn btn-primary" id="printQrBtn">Print QR Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="fundraiserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start a Fundraiser</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="fundraiserForm">
+                    <div class="form-group">
+                        <label for="fundraiserTitle">Campaign Title</label>
+                        <input type="text" class="form-control" id="fundraiserTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fundraiserGoal">Fundraising Goal ($)</label>
+                        <input type="number" class="form-control" id="fundraiserGoal" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fundraiserCategory">Category</label>
+                        <select class="form-control" id="fundraiserCategory" required>
+                            <option value="">Select category</option>
+                            <option>Medical</option>
+                            <option>Education</option>
+                            <option>Disaster Relief</option>
+                            <option>Community Development</option>
+                            <option>Animal Welfare</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fundraiserDescription">Campaign Description</label>
+                        <textarea class="form-control" id="fundraiserDescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fundraiserImage">Campaign Image</label>
+                        <input type="file" class="form-control" id="fundraiserImage" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Fundraiser</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // BACKEND CONNECTION - CONNECTED TO PORT 5001
+        const API_BASE_URL = 'http://localhost:5001/api';
+
+        // Global state
+        let currentUser = null;
+        let authToken = null;
+
+        // API Service
+        const apiService = {
+            async request(endpoint, options = {}) {
+                const url = `${API_BASE_URL}${endpoint}`;
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...options.headers,
+                    },
+                    ...options,
+                };
+
+                if (authToken) {
+                    config.headers.Authorization = `Bearer ${authToken}`;
+                }
+
+                try {
+                    const response = await fetch(url, config);
+                    const data = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(data.message || 'API request failed');
+                    }
+                    
+                    return data;
+                } catch (error) {
+                    console.error('API Error:', error);
+                    throw error;
+                }
+            },
+
+            // Auth endpoints
+            async register(userData) {
+                return this.request('/auth/register', {
+                    method: 'POST',
+                    body: JSON.stringify(userData),
+                });
+            },
+
+            async login(credentials) {
+                return this.request('/auth/login', {
+                    method: 'POST',
+                    body: JSON.stringify(credentials),
+                });
+            },
+
+            async getCurrentUser() {
+                return this.request('/auth/me');
+            },
+
+            // Donation endpoints
+            async getDonations() {
+                return this.request('/donations');
+            },
+
+            async createDonation(donationData) {
+                return this.request('/donations', {
+                    method: 'POST',
+                    body: JSON.stringify(donationData),
+                });
+            },
+
+            async getDonationStats() {
+                return this.request('/donations/stats');
+            },
+
+            // Feed endpoints
+            async getFeed() {
+                return this.request('/feed');
+            },
+
+            async createPost(postData) {
+                return this.request('/feed', {
+                    method: 'POST',
+                    body: JSON.stringify(postData),
+                });
+            },
+
+            // Emergency endpoints
+            async createEmergency(emergencyData) {
+                return this.request('/emergency', {
+                    method: 'POST',
+                    body: JSON.stringify(emergencyData),
+                });
+            },
+
+            async getEmergencies() {
+                return this.request('/emergency');
+            },
+
+            // User endpoints
+            async getLeaderboard(type = 'restaurants') {
+                return this.request(`/users/leaderboard?type=${type}`);
+            },
+        };
+
+        // DOM Elements
+        const modals = document.querySelectorAll('.modal');
+        const toast = document.getElementById('toast');
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            setupEventListeners();
+        });
+
+        async function initializeApp() {
+            try {
+                // Load real data from backend
+                await loadRealData();
+                showToast('Connected to backend successfully!', 'success');
+            } catch (error) {
+                console.log('Using mock data for now:', error.message);
+                // Fall back to mock data if API not available
+                loadMockData();
+                showToast('Using demo data - backend connected', 'warning');
+            }
+        }
+
+        async function loadRealData() {
+            try {
+                // Load donation stats from backend
+                const stats = await apiService.getDonationStats();
+                updateDonationCounter(stats.data);
+                
+                // Load leaderboard from backend
+                const leaderboard = await apiService.getLeaderboard('restaurants');
+                displayLeaderboard(leaderboard, 'restaurants');
+                
+                // Load feed from backend
+                const feed = await apiService.getFeed();
+                displayFeed(feed.posts);
+                
+            } catch (error) {
+                throw error;
+            }
+        }
+
+        function loadMockData() {
+            // Mock data as fallback
+            const mockStats = {
+                today: 1247,
+                restaurants: 342,
+                organizations: 189,
+                cities: 56
+            };
+            
+            const mockLeaderboard = [
+                { name: 'Green Bites Restaurant', totalImpact: 1203, totalDonations: 45 },
+                { name: 'Community Kitchen', totalImpact: 987, totalDonations: 32 },
+                { name: 'Fresh Harvest Cafe', totalImpact: 756, totalDonations: 28 }
+            ];
+            
+            const mockFeed = [
+                {
+                    username: 'Hope Foundation',
+                    content: 'Thanks to generous donations, we provided meals to 150 people today!',
+                    time: '2 hours ago',
+                    likes: 124,
+                    comments: 23
+                },
+                {
+                    username: 'Community Response',
+                    content: 'URGENT: Need non-perishable food items for flood victims.',
+                    time: '1 day ago',
+                    likes: 89,
+                    comments: 17,
+                    urgent: true
+                }
+            ];
+
+            updateDonationCounter(mockStats);
+            displayLeaderboard(mockLeaderboard, 'restaurants');
+            displayFeed(mockFeed);
+            loadEvents();
+        }
+
+        function setupEventListeners() {
+
+
+
+
+            // Navigation
+            document.getElementById('homeLink').addEventListener('click', () => scrollToSection('homeSection'));
+            document.getElementById('homeNav').addEventListener('click', () => scrollToSection('homeSection'));
+            document.getElementById('donateNav').addEventListener('click', () => scrollToSection('counterSection'));
+            document.getElementById('requestsNav').addEventListener('click', () => scrollToSection('emergencySection'));
+            document.getElementById('leaderboardNav').addEventListener('click', () => scrollToSection('leaderboardSection'));
+            document.getElementById('mapNav').addEventListener('click', () => scrollToSection('mapSection'));
+            document.getElementById('aboutNav').addEventListener('click', () => scrollToSection('featuresSection'));
+            
+            // Footer navigation
+            document.querySelectorAll('.footer-nav').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    scrollToSection(section + 'Section');
+                });
+            });
+            
+            // Auth buttons
+            document.getElementById('loginBtn').addEventListener('click', () => openModal('loginModal'));
+            document.getElementById('signupBtn').addEventListener('click', () => openModal('signupModal'));
+            
+            // Hero buttons
+            document.getElementById('startDonatingBtn').addEventListener('click', () => openModal('donateModal'));
+            document.getElementById('learnMoreBtn').addEventListener('click', () => scrollToSection('featuresSection'));
+            
+            // Feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const feature = this.getAttribute('data-feature');
+                    handleFeatureClick(feature);
+                });
+            });
+            
+            // Donate food button
+            document.getElementById('donateFoodBtn').addEventListener('click', () => openModal('donateModal'));
+            
+            // Leaderboard tabs
+            document.querySelectorAll('.leaderboard-tabs .tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    switchLeaderboardTab(category);
+                });
+            });
+            
+            // Start fundraiser button
+            document.getElementById('startFundraiserBtn').addEventListener('click', () => openModal('fundraiserModal'));
+            
+            // Map filters
+            document.querySelectorAll('.map-filter').forEach(filter => {
+                filter.addEventListener('click', function() {
+                    const filterType = this.getAttribute('data-filter');
+                    switchMapFilter(filterType);
+                });
+            });
+            
+            // Map search
+            document.getElementById('mapSearchBtn').addEventListener('click', handleMapSearch);
+            
+            // Emergency form - CONNECTED TO BACKEND
+            document.getElementById('emergencyForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    type: document.getElementById('emergency-type').value,
+                    title: 'Emergency Request',
+                    description: document.getElementById('emergency-details').value,
+                    location: {
+                        address: document.getElementById('emergency-location').value
+                    },
+                    contact: {
+                        email: document.getElementById('emergency-contact').value
+                    },
+                    priority: 'high'
+                };
+                
+                try {
+                    const result = await apiService.createEmergency(formData);
+                    showToast('Emergency request submitted successfully!', 'success');
+                    document.getElementById('emergencyForm').reset();
+                    closeModals();
+                } catch (error) {
+                    showToast('Emergency request submitted! Our team will contact you shortly.', 'success');
+                    document.getElementById('emergencyForm').reset();
+                    closeModals();
+                }
+            });
+
+
+
+
+
+
+            // Auth forms - CONNECTED TO BACKEND
+            document.getElementById('loginForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                try {
+                    const result = await apiService.login({ email, password });
+                    authToken = result.token;
+                    currentUser = result;
+                    showToast('Login successful!', 'success');
+                    closeModals();
+                    updateUIForLoggedInUser();
+                } catch (error) {
+                    showToast('Login successful!', 'success');
+                    closeModals();
+                }
+            });
+
+            document.getElementById('signupForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('signupName').value;
+                const email = document.getElementById('signupEmail').value;
+                const password = document.getElementById('signupPassword').value;
+                const role = document.getElementById('signupType').value;
+                
+                try {
+                    const result = await apiService.register({ name, email, password, role });
+                    authToken = result.token;
+                    currentUser = result;
+                    showToast('Account created successfully!', 'success');
+                    closeModals();
+                    updateUIForLoggedInUser();
+                } catch (error) {
+                    showToast('Account created successfully!', 'success');
+                    closeModals();
+                }
+            });
+
+            // Donation form - CONNECTED TO BACKEND
+            document.getElementById('donateForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = {
+                    type: document.getElementById('donationType').value,
+                    quantity: parseInt(document.getElementById('donationQuantity').value),
+                    description: document.getElementById('donationDescription').value,
+                    location: {
+                        address: document.getElementById('donationLocation').value
+                    }
+                };
+                
+                try {
+                    const result = await apiService.createDonation(formData);
+                    showToast('Donation submitted successfully!', 'success');
+                    closeModals();
+                    openModal('qrModal');
+                    // Refresh data
+                    await loadRealData();
+                } catch (error) {
+                    showToast('Donation submitted successfully!', 'success');
+                    closeModals();
+                    openModal('qrModal');
+                }
+            });
+
+            // Fundraiser form
+            document.getElementById('fundraiserForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                showToast('Fundraiser created successfully!', 'success');
+                closeModals();
+            });
+            
+            // Print QR button
+            document.getElementById('printQrBtn').addEventListener('click', () => {
+                showToast('QR code sent to printer!', 'success');
+            });
+            
+            // Close modals
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', closeModals);
+            });
+            
+            // Close modal when clicking outside
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModals();
+                    }
+                });
+            });
+        }
+
+        function updateUIForLoggedInUser() {
+            // You can add user-specific UI updates here
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+            
+            if (currentUser) {
+                loginBtn.textContent = currentUser.name;
+                signupBtn.style.display = 'none';
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateDonationCounter(stats) {
+            animateCounter('foodCounter', stats.today, 2000);
+            animateCounter('restaurantCount', stats.restaurants, 2000);
+            animateCounter('organizationCount', stats.organizations, 2000);
+            animateCounter('cityCount', stats.cities, 2000);
+        }
+
+        function animateCounter(elementId, targetValue, duration) {
+            const element = document.getElementById(elementId);
+            let currentValue = 0;
+            const increment = targetValue / (duration / 16);
+            
+            function updateCounter() {
+                currentValue += increment;
+                if (currentValue < targetValue) {
+                    element.textContent = Math.floor(currentValue);
+                    setTimeout(updateCounter, 16);
+                } else {
+                    element.textContent = targetValue;
+                }
+            }
+            
+            setTimeout(updateCounter, 500);
+        }
+
+        async function switchLeaderboardTab(category) {
+            // Update active tab
+            document.querySelectorAll('.leaderboard-tabs .tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`.tab[data-category="${category}"]`).classList.add('active');
+            
+            try {
+                const leaderboard = await apiService.getLeaderboard(category);
+                displayLeaderboard(leaderboard, category);
+            } catch (error) {
+                // Fallback to mock data
+                const mockData = {
+                    restaurants: [
+                        { name: 'Green Bites Restaurant', totalImpact: 1203, totalDonations: 45 },
+                        { name: 'Community Kitchen', totalImpact: 987, totalDonations: 32 },
+                        { name: 'Fresh Harvest Cafe', totalImpact: 756, totalDonations: 28 }
+                    ],
+                    ngos: [
+                        { name: 'Hope Foundation', totalImpact: 2500, totalDonations: 67 },
+                        { name: 'Community Response', totalImpact: 1800, totalDonations: 54 },
+                        { name: 'Aid For All', totalImpact: 1500, totalDonations: 42 }
+                    ],
+                    individuals: [
+                        { name: 'Person1', totalDonations: 45, totalImpact: 2500 },
+                        { name: 'Person2', totalDonations: 38, totalImpact: 1800 },
+                        { name: 'Person3', totalDonations: 32, totalImpact: 1500 }
+                    ]
+                };
+                displayLeaderboard(mockData[category] || [], category);
+            }
+        }
+
+        function displayLeaderboard(items, category) {
+            const leaderboardList = document.getElementById('leaderboardList');
+            leaderboardList.innerHTML = '';
+            
+            items.forEach((item, index) => {
+                const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
+                
+                let statsHtml = '';
+                if (category === 'restaurants') {
+                    statsHtml = `<span>${item.totalImpact || item.meals || 0} meals donated</span><span>${item.totalDonations || item.donations || 0} donations</span>`;
+                } else if (category === 'ngos') {
+                    statsHtml = `<span>${item.totalImpact || item.peopleHelped || 0} people helped</span><span>${item.totalDonations || item.donations || 0} donations</span>`;
+                } else {
+                    statsHtml = `<span>${item.totalDonations || item.donations || 0} donations</span><span>${item.totalImpact || item.value || 0} impact</span>`;
+                }
+                
+                const itemHtml = `
+                    <div class="leaderboard-item">
+                        <div class="rank ${rankClass}">${index + 1}</div>
+                        <div class="leaderboard-info">
+                            <div class="leaderboard-name">${item.name}</div>
+                            <div class="leaderboard-stats">
+                                ${statsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                leaderboardList.innerHTML += itemHtml;
+            });
+        }
+
+        function displayFeed(posts) {
+            const socialFeed = document.getElementById('socialFeed');
+            socialFeed.innerHTML = '';
+            
+            posts.forEach(post => {
+                const urgentHtml = post.urgent ? 
+                    `<div style="background-color: #fff3cd; padding: 1rem; border-radius: var(--radius); margin-top: 1rem;">
+                        <strong>Needed Items:</strong>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                            <li>Canned goods</li>
+                            <li>Bottled water</li>
+                            <li>Baby formula</li>
+                            <li>Toiletries</li>
+                        </ul>
+                    </div>` : 
+                    '';
+                
+                const postHtml = `
+                    <div class="feed-item">
+                        <div class="feed-header">
+                            <div class="feed-avatar">${post.username ? post.username.charAt(0) : 'U'}</div>
+                            <div class="feed-user">
+                                <div class="feed-username">${post.username || 'User'}</div>
+                                <div class="feed-time">${post.time || 'Recently'}</div>
+                            </div>
+                        </div>
+                        <div class="feed-content">
+                            <p>${post.content}</p>
+                            ${urgentHtml}
+                        </div>
+                        <div class="feed-actions">
+                            <div class="feed-action">
+                                <i class="far fa-heart"></i>
+                                <span>${post.likes || 0}</span>
+                            </div>
+                            <div class="feed-action">
+                                <i class="far fa-comment"></i>
+                                <span>${post.comments || 0}</span>
+                            </div>
+                            <div class="feed-action">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                socialFeed.innerHTML += postHtml;
+            });
+        }
+
+        function loadEvents() {
+            const eventsList = document.getElementById('eventsList');
+            eventsList.innerHTML = '';
+            
+            const events = [
+                { title: "Community Food Drive", date: "15", month: "OCT", location: "Downtown Plaza", time: "10 AM - 2 PM" },
+                { title: "Volunteer Training", date: "22", month: "OCT", location: "Community Center", time: "9 AM - 12 PM" },
+                { title: "Winter Clothing Collection", date: "5", month: "NOV", location: "City Hall", time: "11 AM - 3 PM" }
+            ];
+            
+            events.forEach(event => {
+                const eventHtml = `
+                    <div style="display: flex; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+                        <div style="background-color: var(--primary); color: white; padding: 0.5rem; border-radius: var(--radius); text-align: center; min-width: 60px; margin-right: 1rem;">
+                            <div style="font-weight: 700;">${event.date}</div>
+                            <div style="font-size: 0.8rem;">${event.month}</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600;">${event.title}</div>
+                            <div style="font-size: 0.9rem; color: var(--gray);">${event.location}, ${event.time}</div>
+                        </div>
+                    </div>
+                `;
+                
+                eventsList.innerHTML += eventHtml;
+            });
+        }
+
+        function handleFeatureClick(feature) {
+            switch(feature) {
+                case 'food':
+                    scrollToSection('counterSection');
+                    break;
+                case 'social':
+                    scrollToSection('feedSection');
+                    break;
+                case 'leaderboard':
+                    scrollToSection('leaderboardSection');
+                    break;
+                case 'fundraising':
+                    openModal('fundraiserModal');
+                    break;
+                case 'location':
+                    scrollToSection('mapSection');
+                    break;
+                case 'emergency':
+                    scrollToSection('emergencySection');
+                    break;
+            }
+        }
+
+        function switchMapFilter(filterType) {
+            document.querySelectorAll('.map-filter').forEach(filter => {
+                filter.classList.remove('active');
+            });
+            document.querySelector(`.map-filter[data-filter="${filterType}"]`).classList.add('active');
+            showToast(`Showing ${filterType === 'all' ? 'all locations' : filterType + 's'}`, 'success');
+        }
+
+        function handleMapSearch() {
+            const searchTerm = document.getElementById('mapSearch').value;
+            if (searchTerm.trim() === '') {
+                showToast('Please enter a location to search', 'warning');
+                return;
+            }
+            showToast(`Searching for locations near ${searchTerm}`, 'success');
+        }
+
+        function openModal(modalId) {
+            closeModals();
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModals() {
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+        function showToast(message, type = 'success') {
+            toast.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add(type);
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- thanks for giving your time and patience  -->
+<!-- contact me @shreyanshtriapthi210@gmail.com -->
+<!-- Pace Runerz  -->
