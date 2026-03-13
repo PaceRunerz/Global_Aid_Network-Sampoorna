@@ -3,7 +3,7 @@ const QRCode = require('qrcode');
 
 const generateQR = async (data) => {
   try {
-    const qrCode = await QRCode.toDataURL(data);        etge
+    const qrCode = await QRCode.toDataURL(data);        et
     return qrCode;
   } catch (error) {
     console.error('QR generation error:', error);
