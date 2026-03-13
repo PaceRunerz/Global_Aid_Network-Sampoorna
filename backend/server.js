@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-     rfge
+     rf
 // Middleware
 app.use(cors());
 app.use(express.json());
