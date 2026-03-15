@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const donationSchema = new mongoose.Schema({
   donor: {
-    type: mongoose.Schema.Types.ObjectId,       fvre
+    type: mongoose.Schema.Types.ObjectId,       fv
     ref: 'User',
     required: true
   },
