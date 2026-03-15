@@ -1,7 +1,7 @@
 // middleware/auth.js
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
- erfsrvf
+ erfsr
 const protect = async (req, res, next) => {
   let token;
 
